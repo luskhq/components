@@ -1,0 +1,31 @@
+{
+  "extends": "lusk",
+  "parser": "babel-eslint",
+  "env": {
+    "node": true,
+    "browser": true,
+  },
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "react/jsx-no-duplicate-props": "error",
+    "react/jsx-no-undef": "error",
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "react/no-direct-mutation-state": "error",
+    "react/no-unknown-property": "error",
+    "no-multiple-empty-lines": ["warn", {"max": 2}],
+    "object-curly-spacing": ["warn", "never"],
+    "array-bracket-spacing": ["warn", "never"],
+    "semi": ["warn", "never"],
+    "quotes": ["warn", "double"],
+    "jsx-quotes": ["warn", "prefer-double"],
+    "react/jsx-curly-spacing": ["warn", "never"],
+    "react/jsx-indent-props": ["warn", 2],
+    "react/no-danger": "warn",
+    "react/prop-types": 0,
+    "react/self-closing-comp": "warn",
+    "react/wrap-multilines": "warn"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "name": "@lusk/ui",
+  "description": "A collection of components and stylesheets for Lusk apps",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luskhq/components.git"
+  },
+  "bugs": {
+    "url": "https://github.com/luskhq/components/issues"
+  },
+  "homepage": "https://github.com/luskhq/components",
+  "authors": [
+    "Artur Muller <me@arturmuller.com> (http://arturmuller.com)",
+    "Pavel Volek <me@pavelvolek.cz>"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "redux",
+    "reducer",
+    "entities"
+  ],
+  "main": "components/index.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "babel ./source --out-dir . --ignore *.test.js",
+    "dev": "babel --watch ./source --out-dir . --ignore *.test.js",
+    "prepublish": "npm run build",
+    "lint": "eslint source"
+  },
+  "peerDependencies": {
+    "react": "^15.3.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.16.0",
+    "babel-core": "^6.17.0",
+    "babel-eslint": "^7.0.0",
+    "babel-plugin-transform-object-rest-spread": "^6.16.0",
+    "babel-preset-latest": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "eslint": "^3.7.1",
+    "eslint-config-lusk": "^0.1.0",
+    "eslint-plugin-react": "^6.3.0"
+  },
+  "dependencies": {
+    "funcss": "^0.3.0"
+  }
+}
