@@ -16,9 +16,9 @@
   ],
   "license": "ISC",
   "keywords": [
-    "redux",
-    "reducer",
-    "entities"
+    "react",
+    "components",
+    "lusk"
   ],
   "main": "components/index.js",
   "scripts": {
