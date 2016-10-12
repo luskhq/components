@@ -1,8 +1,8 @@
 // Utils
 
-const makeRem = (base) => (px) => `${px/base}rem`
+const makeRem = (base) => (px) => `${px / base}rem`
 const rem = makeRem(15)
-const perc = (n) => `${n*100}%`
+const perc = (fraction) => `${fraction * 100}%`
 
 
 // ============= MEDIA =============
@@ -41,9 +41,69 @@ const spacing = [
   ["105", rem(105)], // 7
 ]
 
+const padding = {
+  name: "padding",
+  rules: spacing,
+  media,
+}
+
+const paddingTop = {
+  name: "padding-top",
+  rules: spacing,
+  media,
+}
+
+const paddingRight = {
+  name: "padding-right",
+  rules: spacing,
+  media,
+}
+
+const paddingBottom = {
+  name: "padding-bottom",
+  rules: spacing,
+  media,
+}
+
+const paddingLeft = {
+  name: "padding-left",
+  rules: spacing,
+  media,
+}
+
+const margin = {
+  name: "margin",
+  rules: spacing,
+  media,
+}
+
+const marginTop = {
+  name: "margin-top",
+  rules: spacing,
+  media,
+}
+
+const marginRight = {
+  name: "margin-right",
+  rules: spacing,
+  media,
+}
+
+const marginBottom = {
+  name: "margin-bottom",
+  rules: spacing,
+  media,
+}
+
+const marginLeft = {
+  name: "margin-left",
+  rules: spacing,
+  media,
+}
+
 // Colors
 
-const color = [
+const colors = [
   ["inherit"],
   ["transparent"],
   ["black", "#000"],
@@ -70,17 +130,30 @@ const color = [
   ["dark-pink", "#f080bf"],
 ]
 
-// Box Shadows
+const color = {
+  name: "color",
+  rules: colors,
+  pseudo,
+}
 
-const boxShadow = [
-  ["subtle", "0 2px 3px rgba(0,0,0,0.1)"],
-  ["strong", "0px 10px 15px rgba(0,0,0,0.30)"],
-]
+const backgroundColor = {
+  name: "background-color",
+  rules: colors,
+  pseudo,
+}
+
+// Visual
+
+const boxShadow = {
+  name: "box-shadow",
+  rules: [
+    ["subtle", "0 2px 3px rgba(0,0,0,0.1)"],
+    ["strong", "0px 10px 15px rgba(0,0,0,0.30)"],
+  ],
+}
 
 
 // ========== DEFINITIONS ==========
-
-const def = (rules, psuedo) => Object.assign({rules, media}, {pseudo: psuedo})
 
 export default [
 
@@ -88,24 +161,28 @@ export default [
 
   // Box-model
 
-  ["padding", def(spacing)],
-  ["padding-top", def(spacing)],
-  ["padding-left", def(spacing)],
-  ["padding-right", def(spacing)],
-  ["padding-bottom", def(spacing)],
+  padding,
+  paddingTop,
+  paddingRight,
+  paddingBottom,
+  paddingLeft,
 
-  ["margin", def(spacing)],
-  ["margin-top", def(spacing)],
-  ["margin-left", def(spacing)],
-  ["margin-right", def(spacing)],
-  ["margin-bottom", def(spacing)],
+  margin,
+  marginTop,
+  marginRight,
+  marginBottom,
+  marginLeft,
 
   // Typography
 
+  // Colors
+
+  color,
+  backgroundColor,
+
   // Visual
 
-  ["background-color", def(color, pseudo)],
-  ["box-shadow", def(boxShadow)],
+  boxShadow,
 
   // Misc
 
