@@ -68,10 +68,83 @@ const addPaddingY = (stylesheet) => {
   return stylesheet
 }
 
+const addMarginAll = (stylesheet) => {
+  if (!(stylesheet.margin && stylesheet.marginTop && stylesheet.marginRight && stylesheet.marginBottom && stylesheet.marginLeft)) {
+    console.error("Coulnd't add `marginAll` mixin: The following rules have to be defined on the stylesheet object to be able to add it: `margin`, `marginTop`, `marginRight`, `marginBottom`, `marginLeft`")
+    return stylesheet
+  }
+
+  stylesheet.marginAll = (values, arg) => {
+
+    switch (values.length) {
+      case 1:
+        return stylesheet.margin(values[0], arg)
+      case 2:
+        return [
+          stylesheet.marginTop(values[0], arg),
+          stylesheet.marginRight(values[1], arg),
+          stylesheet.marginBottom(values[0], arg),
+          stylesheet.marginLeft(values[1], arg),
+        ]
+      case 3:
+        return [
+          stylesheet.marginTop(values[0], arg),
+          stylesheet.marginRight(values[1], arg),
+          stylesheet.marginBottom(values[2], arg),
+          stylesheet.marginLeft(values[1], arg),
+        ]
+      case 4:
+        return [
+          stylesheet.marginTop(values[0], arg),
+          stylesheet.marginRight(values[1], arg),
+          stylesheet.marginBottom(values[2], arg),
+          stylesheet.marginLeft(values[3], arg),
+        ]
+    }
+  }
+
+  return stylesheet
+}
+
+const addMarginX = (stylesheet) => {
+  if (!(stylesheet.marginLeft && stylesheet.marginRight)) {
+    console.error("Coulnd't add `marginX` mixin: The following rules have to be defined on the stylesheet object to be able to add it: `marginRight`, `marginLeft`")
+    return stylesheet
+  }
+
+  stylesheet.marginX = (value, arg) => {
+    return [
+      stylesheet.marginLeft(value, arg),
+      stylesheet.marginRight(value, arg),
+    ]
+  }
+
+  return stylesheet
+}
+
+const addMarginY = (stylesheet) => {
+  if (!(stylesheet.marginTop && stylesheet.marginBottom)) {
+    console.error("Coulnd't add `marginY` mixin: The following rules have to be defined on the stylesheet object to be able to add it: `marginTop`, `marginBottom`")
+    return stylesheet
+  }
+
+  stylesheet.marginY = (value, arg) => {
+    return [
+      stylesheet.marginTop(value, arg),
+      stylesheet.marginBottom(value, arg),
+    ]
+  }
+
+  return stylesheet
+}
+
 const addMixins = (stylesheet) => {
   addPaddingAll(stylesheet)
   addPaddingX(stylesheet)
   addPaddingY(stylesheet)
+  addMarginAll(stylesheet)
+  addMarginX(stylesheet)
+  addMarginY(stylesheet)
   return stylesheet
 }
 
