@@ -1,4 +1,7 @@
 import funcss from "funcss"
 import defs from "./defs"
+import addMixins from "./mixins"
 
-export default funcss(defs)
+const stylesheet = addMixins(funcss(defs))
+
+export default stylesheet
