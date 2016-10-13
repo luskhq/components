@@ -30,15 +30,17 @@ const pseudo = [
 const spacing = [
   ["auto", "auto"],
   ["0", "0"],
-  ["15", rem(15)],   // 1
-  ["21", rem(21)],   // 1.4
-  ["24", rem(24)],   // 1.6
-  ["30", rem(30)],   // 2
-  ["42", rem(42)],   // 2.8
-  ["45", rem(45)],   // 3
-  ["66", rem(66)],   // 4.4
-  ["75", rem(75)],   // 5
-  ["105", rem(105)], // 7
+  ["15", rem(15)],      // 1
+  ["21", rem(21)],      // 1.4
+  ["24", rem(24)],      // 1.6
+  ["30", rem(30)],      // 2
+  ["42", rem(42)],      // 2.8
+  ["45", rem(45)],      // 3
+  ["66", rem(66)],      // 4.4
+  ["75", rem(75)],      // 5
+  ["105", rem(105)],    // 7
+  ["780", rem(780)],    // 52
+  ["1350", rem(1350)],  // 90
 ]
 
 const padding = {
@@ -101,6 +103,14 @@ const marginLeft = {
   media,
 }
 
+// Typography
+
+const fontSize = {
+  name: "font-size",
+  rules: spacing,
+  media,
+}
+
 // Colors
 
 const colors = [
@@ -128,6 +138,8 @@ const colors = [
   ["dark-blue", "#428ae0"],
   ["dark-purple", "#9484e0"],
   ["dark-pink", "#f080bf"],
+  ["#e3e3e7", "#e3e3e7"],
+  ["#4d6273", "#4d6273"],
 ]
 
 const color = {
