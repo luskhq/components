@@ -6,13 +6,13 @@ import s from "../stylesheet"
 
 const ArchivedBanner = () => (
   <div className={c(
-    s.backgroundColor("#e3e3e7"),
+    s.backgroundColor("custom-mischka"),
   )}>
     <MaxWidthConstraint>
       <div className={c(
         s.paddingAll(["30", "75"]),
         s.fontSize("21"),
-        s.color("#4d6273"),
+        s.color("oyster-blue-grey-dark"),
       )}>
         This position is archived
       </div>

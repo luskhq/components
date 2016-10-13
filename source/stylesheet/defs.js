@@ -111,6 +111,24 @@ const fontSize = {
   media,
 }
 
+const lineHeight = {
+  name: "line-height",
+  rules: [
+    ["1.4", "1.4"],
+  ],
+  media,
+}
+
+const textAlign = {
+  name: "textAlign",
+  rules:  [
+    ["left", "left"],
+    ["center", "center"],
+    ["right", "right"],
+  ],
+  media,
+}
+
 // Colors
 
 const colors = [
@@ -138,8 +156,12 @@ const colors = [
   ["dark-blue", "#428ae0"],
   ["dark-purple", "#9484e0"],
   ["dark-pink", "#f080bf"],
-  ["#e3e3e7", "#e3e3e7"],
-  ["#4d6273", "#4d6273"],
+  ["-----", ""],
+  ["oyster-blue-grey", "#5f7d94"],
+  ["oyster-blue-grey-dark", "#4d6273"],
+  ["custom-mischka", "#e3e3e7"],
+  ["custom-yellow-metal", "#7e653c"],
+  ["custom-matrix", "#aa4e59"],
 ]
 
 const color = {
@@ -186,6 +208,10 @@ export default [
   marginLeft,
 
   // Typography
+
+  fontSize,
+  lineHeight,
+  textAlign,
 
   // Colors
 
