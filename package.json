@@ -43,6 +43,6 @@
     "eslint-plugin-react": "^6.3.0"
   },
   "dependencies": {
-    "funcss": "^0.3.1"
+    "funcss": "^0.3.2"
   }
 }
