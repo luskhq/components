@@ -6,9 +6,15 @@ import s from "../stylesheet"
 
 const Cushion = ({children, theme}) => (
   <div className={c(
-      s.paddingAll(theme === "wide" ? ["24", "24", "30"] : ["15", "15", "21"]),
-      s.paddingAll(theme === "wide" ? ["30", "30", "42"] : ["21", "21", "45"], "@small"),
-      s.paddingAll(theme === "wide" ? ["66", "105", "105"] : ["45", "75", "75"], "@medium"),
+      (theme === "wide") ? [
+          s.paddingAll(["24", "24", "30"]),
+          s.paddingAll(["30", "30", "42"], "@small"),
+          s.paddingAll(["66", "105", "105"], "@medium"),
+        ] : [
+          s.paddingAll(["15", "15", "21"]),
+          s.paddingAll(["21", "21", "45"], "@small"),
+          s.paddingAll(["45", "75", "75"], "@medium"),
+        ]
     )}>
     {children}
   </div>
