@@ -43,6 +43,12 @@ const spacing = [
   ["1350", rem(1350)],  // 90
 ]
 
+const maxWidth = {
+  name: "max-width",
+  rules: spacing,
+  media,
+}
+
 const padding = {
   name: "padding",
   rules: spacing,
@@ -156,7 +162,6 @@ const colors = [
   ["dark-blue", "#428ae0"],
   ["dark-purple", "#9484e0"],
   ["dark-pink", "#f080bf"],
-  ["-----", ""],
   ["oyster-blue-grey", "#5f7d94"],
   ["oyster-blue-grey-dark", "#4d6273"],
   ["custom-mischka", "#e3e3e7"],
@@ -194,6 +199,8 @@ export default [
   // Positioning
 
   // Box-model
+
+  maxWidth,
 
   padding,
   paddingTop,
