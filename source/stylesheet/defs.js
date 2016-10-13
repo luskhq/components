@@ -28,8 +28,8 @@ const pseudo = [
 // Spacing (Margin and Padding)
 
 const spacing = [
-  ["auto", "auto"],
-  ["0", "0"],
+  ["auto"],
+  ["0"],
   ["15", rem(15)],      // 1
   ["21", rem(21)],      // 1.4
   ["24", rem(24)],      // 1.6
@@ -120,7 +120,8 @@ const fontSize = {
 const lineHeight = {
   name: "line-height",
   rules: [
-    ["1.4", "1.4"],
+    ["tight", "1"],
+    ["comfy", "1.4"],
   ],
   media,
 }
@@ -128,9 +129,9 @@ const lineHeight = {
 const textAlign = {
   name: "textAlign",
   rules:  [
-    ["left", "left"],
-    ["center", "center"],
-    ["right", "right"],
+    ["left"],
+    ["center"],
+    ["right"],
   ],
   media,
 }
@@ -141,8 +142,9 @@ const colors = [
   ["inherit"],
   ["transparent"],
   ["black", "#000"],
-  ["transparent-black", "rgba(0,0,0,0.2)"],
   ["white", "#fff"],
+
+  // Lusk Color Palette
   ["gray", "#9bb5c3"],
   ["dark-gray", "#3d5275"],
   ["light-gray", "#f1f1f3"],
@@ -162,8 +164,14 @@ const colors = [
   ["dark-blue", "#428ae0"],
   ["dark-purple", "#9484e0"],
   ["dark-pink", "#f080bf"],
-  ["oyster-blue-grey", "#5f7d94"],
-  ["oyster-blue-grey-dark", "#4d6273"],
+
+  // Colors defined as constants in Oyster which are not part of the Lusk
+  // color palette
+  ["oyster-blue-gray", "#5f7d94"],
+  ["oyster-blue-gray-dark", "#4d6273"],
+
+  // Colors specified inline in Oyster components which are not part of the
+  // Lusk color palette
   ["custom-mischka", "#e3e3e7"],
   ["custom-yellow-metal", "#7e653c"],
   ["custom-matrix", "#aa4e59"],
