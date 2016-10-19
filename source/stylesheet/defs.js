@@ -93,6 +93,22 @@ const display = {
   media,
 }
 
+const flexGrow = {
+  name: "flex-grow",
+  rules: [
+    ["1"],
+  ],
+  media,
+}
+
+const flexShrink = {
+  name: "flex-shrink",
+  rules: [
+    ["0"],
+  ],
+  media,
+}
+
 const flexDirection = {
   name: "flex-direction",
   rules: [
@@ -336,6 +352,7 @@ const colors = [
   ["oyster-red", "#ea6979"],
   ["oyster-red-light", comix("#fff", "#ea6979", "0.2")],
   ["oyster-red-dark", comix("#000", "#ea6979", "0.06")],
+  ["oyster-background", "#f1f1f3"],
 
   // Colors specified inline in Oyster components which are not part of the
   // Lusk color palette
@@ -343,6 +360,9 @@ const colors = [
   ["custom-mischka-2", "#dedee4"],
   ["custom-yellow-metal", "#7e653c"],
   ["custom-matrix", "#aa4e59"],
+  ["custom-iron", "#e4e4e6"],
+  ["custom-heather", "#b8c7d1"],
+  ["custom-puerto-rico", "#3cc69c"],
   ["custom-gull-gray", "#9ba9b5"],
   ["custom-gull-gray-light", comix("#fff", "#9ba9b5", "0.15")],
   ["custom-gull-gray-dark", comix("#000", "#9ba9b5", "0.06")],
@@ -370,6 +390,25 @@ const fill = {
 }
 
 // Visual
+
+const borderColor = {
+  name: "border-color",
+  rules: colors,
+}
+
+const borderStyle = {
+  name: "border-style",
+  rules: [
+    ["solid"],
+  ],
+}
+
+const borderWidth = {
+  name: "border-width",
+  rules: [
+    ["1"],
+  ],
+}
 
 const borderRadius = {
   name: "border-radius",
@@ -456,6 +495,8 @@ export default [
 
   display,
 
+  flexGrow,
+  flexShrink,
   flexDirection,
   alignItems,
   justifyContent,
@@ -496,6 +537,9 @@ export default [
 
   // Visual
 
+  borderColor,
+  borderStyle,
+  borderWidth,
   borderRadius,
   opacity,
   boxShadow,

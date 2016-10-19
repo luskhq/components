@@ -138,6 +138,32 @@ const addMarginY = (stylesheet) => {
   return stylesheet
 }
 
+const addBorderAll = (stylesheet) => {
+  if (!(stylesheet.borderColor && stylesheet.borderStyle && stylesheet.borderWidth)) {
+    console.error("Coulnd't add `paddingAll` mixin: The following rules have to be defined on the stylesheet object to be able to add it: `borderColor`, `borderStyle`, `borderWidth`")
+    return stylesheet
+  }
+
+  stylesheet.borderAll = (values, arg) => {
+
+    switch (values.length) {
+      case 2:
+        return [
+          stylesheet.borderWidth(values[0], arg),
+          stylesheet.borderStyle(values[1], arg),
+        ]
+      case 3:
+        return [
+          stylesheet.borderWidth(values[0], arg),
+          stylesheet.borderStyle(values[1], arg),
+          stylesheet.borderColor(values[2], arg),
+        ]
+    }
+  }
+
+  return stylesheet
+}
+
 const addMixins = (stylesheet) => {
   addPaddingAll(stylesheet)
   addPaddingX(stylesheet)
@@ -145,6 +171,7 @@ const addMixins = (stylesheet) => {
   addMarginAll(stylesheet)
   addMarginX(stylesheet)
   addMarginY(stylesheet)
+  addBorderAll(stylesheet)
   return stylesheet
 }
 
