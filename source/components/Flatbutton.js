@@ -1,5 +1,6 @@
 import React from "react"
 import {PropTypes} from "react"
+
 import SmallIcon from "./SmallIcon"
 import Pressable from "./Pressable"
 
