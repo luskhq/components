@@ -2,7 +2,7 @@ import React from "react"
 import {PropTypes} from "react"
 
 import {Pressable} from "./index"
-import {SmallIcon} from "./index"
+import SmallIcon from "./SmallIcon"
 
 import c from "classnames"
 import s from "../stylesheet"
