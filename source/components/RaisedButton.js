@@ -130,7 +130,7 @@ class RaisedButtonInner extends React.Component {
         )}>
           {(pending) ? labelPending : label}
         </div>
-        {(icon) ?
+        {(icon) &&
           <div className={c(
             s.marginAll(iconPosition === "left" ? ["auto", "9", "auto", "auto"] : ["auto", "auto", "auto", "9"]),
           )}>
@@ -139,7 +139,7 @@ class RaisedButtonInner extends React.Component {
               : <Icon name={icon} theme="light" />
             }
           </div>
-          : null}
+        }
       </div>
     )
   }

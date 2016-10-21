@@ -70,7 +70,7 @@ class Dropdown extends React.Component {
 
         {this.renderHandler()}
 
-        {(open) ?
+        {(open) &&
           <DropdownMenu
             alignMenu={alignMenu}
             children={children}
@@ -78,7 +78,7 @@ class Dropdown extends React.Component {
             handleBlur={this.handleBlur}
             closeMenuOnEsc={this.closeMenuOnEsc}
             />
-        : null}
+        }
       </span>
     )
   }
