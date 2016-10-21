@@ -6,24 +6,22 @@ import {SvgElement} from "./index"
 import c from "classnames"
 import s from "../stylesheet"
 
-function SmallIcon ({name, theme, ...passingProps}) {
-  return (
-    <SvgElement
-      {...passingProps}
-      viewBox="0 0 18 18"
-      width="1.2em"
-      height="1.2em"
-      >
-      <g className={c(
-          s.fill(theme === "light" ? "white" : "gray"),
-        )}>
-        <IconSwitch name={name} />
-      </g>
-    </SvgElement>
-  )
+const SmallIcon = ({name, theme, ...passingProps}) => {
+  <SvgElement
+    {...passingProps}
+    viewBox="0 0 18 18"
+    width="1.2em"
+    height="1.2em"
+    >
+    <g className={c(
+        s.fill(theme === "light" ? "white" : "gray"),
+      )}>
+      <IconSwitch name={name} />
+    </g>
+  </SvgElement>
 }
 
-function IconSwitch ({name}) {
+const IconSwitch = ({name}) => {
   switch (name) {
     case "_empty": return <path />
     case "add": return <path d="M8 8H3v2h5v5h2v-5h5V8h-5V3H8v5z"/>

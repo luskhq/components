@@ -6,24 +6,22 @@ import {SvgElement} from "./index"
 import c from "classnames"
 import s from "../stylesheet"
 
-function Icon ({name, theme, ...passingProps}) {
-  return (
-    <SvgElement
-      {...passingProps}
-      viewBox="0 0 24 24"
-      width="1.6em"
-      height="1.6em"
-      >
-      <g className={c(
-          s.fill(theme === "light" ? "white" : "gray"),
-        )}>
-        <IconSwitch name={name} />
-      </g>
-    </SvgElement>
-  )
+const Icon = ({name, theme, ...passingProps}) => {
+  <SvgElement
+    {...passingProps}
+    viewBox="0 0 24 24"
+    width="1.6em"
+    height="1.6em"
+    >
+    <g className={c(
+        s.fill(theme === "light" ? "white" : "gray"),
+      )}>
+      <IconSwitch name={name} />
+    </g>
+  </SvgElement>
 }
 
-function IconSwitch ({name}) {
+const IconSwitch = ({name}) => {
   switch (name) {
     case "add": return <path d="M11,11 L5,11 L5,13 L11,13 L11,19 L13,19 L13,13 L19,13 L19,11 L13,11 L13,5 L11,5 L11,11 Z" />
     case "appForm": return <path d="M19,3 L14.82,3 C14.4,1.84 13.3,1 12,1 C10.7,1 9.6,1.84 9.18,3 L5,3 C3.9,3 3,3.9 3,5 L3,19 C3,20.1 3.9,21 5,21 L19,21 C20.1,21 21,20.1 21,19 L21,5 C21,3.9 20.1,3 19,3 L19,3 Z M12,3 C12.55,3 13,3.45 13,4 C13,4.55 12.55,5 12,5 C11.45,5 11,4.55 11,4 C11,3.45 11.45,3 12,3 L12,3 Z M14,17 L7,17 L7,15 L14,15 L14,17 L14,17 Z M17,13 L7,13 L7,11 L17,11 L17,13 L17,13 Z M17,9 L7,9 L7,7 L17,7 L17,9 L17,9 Z"/>
