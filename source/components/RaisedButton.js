@@ -102,7 +102,7 @@ class RaisedButtonInner extends React.Component {
           s.display("flex"),
           s.alignItems("center"),
           s.justifyContent("center"),
-          s.flexDirection(iconPosition === "left" && "row-reverse"),
+          s.flexDirection((iconPosition === "left") && "row-reverse"),
           pick(size, {
             large: [
               s.height("51"),
@@ -124,7 +124,7 @@ class RaisedButtonInner extends React.Component {
           }),
         )}>
         <div className={c(
-          s.color(theme === "light" ? "oyster-blue-gray" : "white"),
+          s.color((theme === "light") ? "oyster-blue-gray" : "white"),
           s.fontWeight("600"),
           s.textAlign("center"),
         )}>
@@ -132,7 +132,7 @@ class RaisedButtonInner extends React.Component {
         </div>
         {(icon) &&
           <div className={c(
-            s.marginAll(iconPosition === "left" ? ["auto", "9", "auto", "auto"] : ["auto", "auto", "auto", "9"]),
+            s.marginAll((iconPosition === "left") ? ["auto", "9", "auto", "auto"] : ["auto", "auto", "auto", "9"]),
           )}>
             {(theme === "light")
               ? <Icon name={icon} />

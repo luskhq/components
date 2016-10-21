@@ -6,7 +6,7 @@ import s from "../stylesheet"
 
 const MaxWidthConstraint = ({children, size}) => (
   <div className={c(
-      s.maxWidth(size === "narrow" ? "780" : "1350"),
+      s.maxWidth((size === "narrow") ? "780" : "1350"),
       s.marginAll(["0", "auto"]),
     )}>
     {children}

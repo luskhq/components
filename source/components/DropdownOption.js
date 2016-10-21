@@ -65,11 +65,16 @@ class DropdownOption extends React.Component {
 
           {showCheckbox &&
             <div className={c(
-                s.backgroundColor(checked ? "oyster-green" : "oyster-background"),
-                s.borderColor(checked ? "custom-puerto-rico" : "custom-mischka"),
                 s.borderStyle("solid"),
                 s.borderWidth("1"),
                 s.borderRadius("3"),
+                checked ? [
+                  s.backgroundColor("oyster-green"),
+                  s.borderColor("custom-puerto-rico"),
+                ] : [
+                  s.backgroundColor("oyster-background"),
+                  s.borderColor("custom-mischka"),
+                ],
               )}>
               <SmallIcon name={checked ? "checked" : "_empty"} theme="light"/>
             </div>

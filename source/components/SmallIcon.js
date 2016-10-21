@@ -14,7 +14,7 @@ const SmallIcon = ({name, theme, ...passingProps}) => (
     height="1.2em"
     >
     <g className={c(
-        s.fill(theme === "light" ? "white" : "gray"),
+        s.fill((theme === "light") ? "white" : "gray"),
       )}>
       <IconSwitch name={name} />
     </g>
