@@ -13,7 +13,7 @@ const Text = ({children, center, hero, noMargin, ...otherProps}, {theme}) => (
       s.lineHeight("comfy"),
       apply(theme, (theme) => {
         const color = pick(theme, {
-          regular: "oyster-blue-grey",
+          regular: "oyster-blue-gray",
           warning: "custom-yellow-metal",
           error: "custom-matrix",
         })
