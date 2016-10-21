@@ -138,6 +138,7 @@ const justifyContent = {
 const spacing = [
   ["auto"],
   ["0"],
+  ["100perc", "100%"],
   ["1px"],
   ["3", rem(3)],        // 0.2
   ["6", rem(6)],        // 0.4
