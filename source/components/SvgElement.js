@@ -1,7 +1,7 @@
 import React from "react"
 import {PropTypes} from "react"
 
-const SvgElement = ({children, ...otherProps}) => {
+const SvgElement = ({children, ...otherProps}) => (
   <svg
     {...otherProps}
     preserveAspectRatio="xMidYMid meet"
@@ -9,7 +9,7 @@ const SvgElement = ({children, ...otherProps}) => {
     >
     {children}
   </svg>
-}
+)
 
 SvgElement.propTypes = {
   viewBox: PropTypes.string.isRequired,

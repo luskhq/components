@@ -6,7 +6,7 @@ import {SvgElement} from "./index"
 import c from "classnames"
 import s from "../stylesheet"
 
-const SmallIcon = ({name, theme, ...passingProps}) => {
+const SmallIcon = ({name, theme, ...passingProps}) => (
   <SvgElement
     {...passingProps}
     viewBox="0 0 18 18"
@@ -19,7 +19,7 @@ const SmallIcon = ({name, theme, ...passingProps}) => {
       <IconSwitch name={name} />
     </g>
   </SvgElement>
-}
+)
 
 const IconSwitch = ({name}) => {
   switch (name) {

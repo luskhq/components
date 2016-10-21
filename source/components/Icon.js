@@ -6,7 +6,7 @@ import {SvgElement} from "./index"
 import c from "classnames"
 import s from "../stylesheet"
 
-const Icon = ({name, theme, ...passingProps}) => {
+const Icon = ({name, theme, ...passingProps}) => (
   <SvgElement
     {...passingProps}
     viewBox="0 0 24 24"
@@ -19,7 +19,7 @@ const Icon = ({name, theme, ...passingProps}) => {
       <IconSwitch name={name} />
     </g>
   </SvgElement>
-}
+)
 
 const IconSwitch = ({name}) => {
   switch (name) {
@@ -56,7 +56,7 @@ const IconSwitch = ({name}) => {
     case "unassign": return <path d="M5.93933983,8 L5,8 C3.89,8 3.01,8.89 3.01,10 L3,17 C3,18.11 3.89,19 5,19 L16.9393398,19 L18.4696699,20.5303301 L19.5303301,19.4696699 L5.53033009,5.46966991 L4.46966991,6.53033009 L5.93933983,8 Z M8,6.06066017 L8,6 C8,4.89 8.89,4 10,4 L14,4 C15.11,4 16,4.89 16,6 L16,8 L19,8 C20.11,8 21,8.89 21,10 L21,17 C21,17.9187605 20.3902544,18.6867974 19.5507012,18.9241725 L20.267767,18.2071068 L8.06066017,6 L8,6.06066017 Z M14,8 L10,8 L10,6 L14,6 L14,8 L14,8 Z" />
     case "user": return <path d="M12,2 C6.48,2 2,6.48 2,12 C2,17.52 6.48,22 12,22 C17.52,22 22,17.52 22,12 C22,6.48 17.52,2 12,2 L12,2 Z M12,5 C13.66,5 15,6.34 15,8 C15,9.66 13.66,11 12,11 C10.34,11 9,9.66 9,8 C9,6.34 10.34,5 12,5 L12,5 Z M12,19.2 C9.5,19.2 7.29,17.92 6,15.98 C6.03,13.99 10,12.9 12,12.9 C13.99,12.9 17.97,13.99 18,15.98 C16.71,17.92 14.5,19.2 12,19.2 L12,19.2 Z"/>
     default: return <path />
-    }
+  }
 }
 
 Icon.propTypes = {
