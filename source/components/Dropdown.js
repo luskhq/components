@@ -1,9 +1,9 @@
 import React from "react"
 import {PropTypes} from "react"
 
-import FlatButton from "./FlatButton"
-import IconButton from "./IconButton"
-import RaisedButton from "./RaisedButton"
+import {FlatButton} from "./index"
+import {IconButton} from "./index"
+import {RaisedButton} from "./index"
 
 import c from "classnames"
 import s from "../stylesheet"

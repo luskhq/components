@@ -1,7 +1,7 @@
 import React from "react"
 import {PropTypes} from "react"
 
-import SvgElement from "./SvgElement"
+import {SvgElement} from "./index"
 
 import c from "classnames"
 import s from "../stylesheet"
