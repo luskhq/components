@@ -3,6 +3,7 @@ import {PropTypes} from "react"
 
 import c from "classnames"
 import s from "../stylesheet"
+import {pick, apply} from "../stylesheet/utils"
 
 const Text = ({children, center, hero, noMargin, ...otherProps}, {theme}) => (
   <p {...otherProps} className={c(
@@ -10,9 +11,17 @@ const Text = ({children, center, hero, noMargin, ...otherProps}, {theme}) => (
       s.fontSize(hero ? "21" : "15"),
       s.textAlign(center && "center"),
       s.lineHeight("comfy"),
-      s.color("oyster-blue-grey"),
-      s.color(theme === "warning" && "custom-yellow-metal"),
-      s.color(theme === "error" && "custom-matrix"),
+      apply(theme, (theme) => {
+        const color = pick(theme, {
+          regular: "oyster-blue-grey",
+          warning: "custom-yellow-metal",
+          error: "custom-matrix",
+        })
+
+        return [
+          s.color(`${color}`),
+        ]
+      }),
     )}>
     {children}
   </p>
