@@ -43,7 +43,7 @@ class FlatButton extends React.Component {
                 s.fontSize("16"),
               ],
             }),
-            () => {
+            apply(null, () => {
               if (disabled) {
                 return [
                   s.backgroundColor("custom-mischka-2"),
@@ -63,7 +63,7 @@ class FlatButton extends React.Component {
                 s.backgroundColor("black-alpha-5", ":hover"),
                 s.backgroundColor("black-alpha-15", ":active"),
               ]
-            },
+            }),
         )}>
         <FlatButtonInner
           label={label}
