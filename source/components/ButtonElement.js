@@ -15,8 +15,7 @@ class ButtonElement extends React.Component {
       <button
         {...otherProps}
         ref={(ref) => this.button = ref}
-        type={type}
-        >
+        type={type}>
         {children}
       </button>
     )

@@ -36,7 +36,11 @@ const pseudo = [
 const location = [
   ["auto"],
   ["0"],
+  ["25perc", "25%"],
+  ["35perc", "35%"],
   ["100perc", "100%"],
+  ["-5px"],
+  ["45", rem(45)],      // 3
 ]
 
 const position = {
@@ -77,7 +81,9 @@ const left = {
 const zIndex = {
   name: "z-index",
   rules: [
+    ["1"],
     ["5"],
+    ["10"],
   ],
 }
 
@@ -85,6 +91,7 @@ const display = {
   name: "display",
   rules: [
     ["none"],
+    ["initial"],
     ["inline"],
     ["inline-block"],
     ["block"],
@@ -96,6 +103,7 @@ const display = {
 const flexGrow = {
   name: "flex-grow",
   rules: [
+    ["0"],
     ["1"],
   ],
   media,
@@ -129,6 +137,7 @@ const justifyContent = {
   name: "justify-content",
   rules: [
     ["center"],
+    ["space-between"],
   ],
   media,
 }
@@ -139,7 +148,13 @@ const spacing = [
   ["auto"],
   ["0"],
   ["100perc", "100%"],
+  ["100vh"],
   ["1px"],
+  ["4px"],
+  ["20px"],
+  ["30px"],
+  ["50px"],
+  ["100px"],
   ["3", rem(3)],        // 0.2
   ["6", rem(6)],        // 0.4
   ["9", rem(9)],        // 0.6
@@ -147,19 +162,23 @@ const spacing = [
   ["13", rem(13)],      // 0.9 cca
   ["15", rem(15)],      // 1
   ["16", rem(16)],      // 1.1 cca
+  ["18", rem(18)],      // 1.2
   ["21", rem(21)],      // 1.4
   ["24", rem(24)],      // 1.6
   ["30", rem(30)],      // 2
   ["36", rem(36)],      // 2.4
   ["42", rem(42)],      // 2.8
   ["45", rem(45)],      // 3
+  ["48", rem(48)],      // 3.2
   ["51", rem(51)],      // 3.4
   ["54", rem(54)],      // 3.6
+  ["60", rem(60)],      // 4
   ["66", rem(66)],      // 4.4
   ["75", rem(75)],      // 5
   ["105", rem(105)],    // 7
   ["135", rem(135)],    // 9
   ["240", rem(240)],    // 16
+  ["300", rem(300)],    // 20
   ["780", rem(780)],    // 52
   ["1350", rem(1350)],  // 90
 ]
@@ -184,6 +203,12 @@ const minWidth = {
 
 const maxWidth = {
   name: "max-width",
+  rules: spacing,
+  media,
+}
+
+const minHeight = {
+  name: "min-height",
   rules: spacing,
   media,
 }
@@ -270,6 +295,7 @@ const fontSize = {
 const fontWeight = {
   name: "font-weight",
   rules: [
+    ["400"],
     ["600"],
   ],
   media,
@@ -279,7 +305,10 @@ const lineHeight = {
   name: "line-height",
   rules: [
     ["tight", "1"],
+    ["tight-2", "1.2"],
     ["comfy", "1.4"],
+    ["comfy-2", "1.5"],
+    ["22", rem(22)],      // 1.5 cca
   ],
   media,
 }
@@ -310,15 +339,22 @@ const textTransform = {
   ],
 }
 
+const whiteSpace = {
+  name: "white-space",
+  rules:  [
+    ["nowrap"],
+  ],
+}
+
 // Colors
 
 const colors = [
   ["inherit"],
   ["transparent"],
   ["black", "#000"],
+  ["black-lighter", comix("#000", "#fff", "0.03")],
+  ["black-lightest", comix("#000", "#fff", "0.08")],
   ["white", "#fff"],
-  ["white-light", comix("#fff", "#000", "0.99")],
-  ["white-dark", comix("#000", "#000", "0.98")],
 
   // Lusk Color Palette
   ["gray", "#9bb5c3"],
@@ -345,32 +381,62 @@ const colors = [
   // color palette
   ["oyster-blue-gray", "#5f7d94"],
   ["oyster-blue-gray-dark", "#4d6273"],
+  ["oyster-blue-gray-50perc", "rgba(95, 125, 148, 0.5)"],
   ["oyster-blue", "#428ae0"],
-  ["oyster-blue-light", comix("#fff", "#428ae0", "0.2")],
-  ["oyster-blue-dark", comix("#000", "#428ae0", "0.06")],
+  ["oyster-blue-light", comix("#fff", "#428ae0", "0.1")],
+  ["oyster-blue-dark", comix("#000", "#428ae0", "0.1")],
+  ["oyster-blue-dark-2", comix("#000", "#428ae0", "0.15")],
   ["oyster-green", "#3bccac"],
-  ["oyster-green-light", comix("#fff", "#3bccac", "0.2")],
-  ["oyster-green-dark", comix("#000", "#3bccac", "0.06")],
+  ["oyster-green-light", comix("#fff", "#3bccac", "0.1")],
+  ["oyster-green-dark", comix("#000", "#3bccac", "0.1")],
   ["oyster-red", "#ea6979"],
-  ["oyster-red-light", comix("#fff", "#ea6979", "0.2")],
-  ["oyster-red-dark", comix("#000", "#ea6979", "0.06")],
+  ["oyster-red-light", comix("#fff", "#ea6979", "0.1")],
+  ["oyster-red-dark", comix("#000", "#ea6979", "0.1")],
+  ["oyster-yellow", "#f6d13e"],
+  ["oyster-gray-dark", "#434343"],
   ["oyster-background", "#f1f1f3"],
 
   // Colors specified inline in Oyster components which are not part of the
   // Lusk color palette
   ["custom-mischka", "#e3e3e7"],
   ["custom-mischka-2", "#dedee4"],
+  ["custom-athens-gray", "#ececee"],
   ["custom-yellow-metal", "#7e653c"],
+  ["custom-yellow-metal-darker", comix("#000", "#7e653c", "0.15")],
+  ["custom-yellow-metal-dark", comix("#000", "#7e653c", "0.40")],
+  ["custom-tower-gray", "#adb8bf"],
   ["custom-matrix", "#aa4e59"],
+  ["custom-matrix-darker", comix("#000", "#aa4e59", "0.15")],
+  ["custom-matrix-dark", comix("#000", "#aa4e59", "0.40")],
   ["custom-iron", "#e4e4e6"],
   ["custom-heather", "#b8c7d1"],
   ["custom-puerto-rico", "#3cc69c"],
+  ["custom-hoki", "#5e7d95"],
+  ["custom-banana-mania", "#fae7b2"],
+  ["custom-beauty-bush", "#f0c8cc"],
+  ["custom-hockey-pockey", "#d0af2c"],
+  ["custom-limed-spruced", "#3d4752"],
+  ["custom-cadet-blue", "#a7bbc7"],
   ["custom-gull-gray", "#9ba9b5"],
-  ["custom-gull-gray-light", comix("#fff", "#9ba9b5", "0.15")],
-  ["custom-gull-gray-dark", comix("#000", "#9ba9b5", "0.06")],
+  ["custom-gull-gray-light", comix("#fff", "#9ba9b5", "0.1")],
+  ["custom-gull-gray-dark", comix("#000", "#9ba9b5", "0.1")],
+  ["custom-gull-gray-2", "#95a8b8"],
+  ["custom-gull-gray-2-light", comix("#fff", "#95a8b8", "0.1")],
+  ["custom-gull-gray-2-dark", comix("#000", "#95a8b8", "0.1")],
+  ["custom-twitter", "#1da0f1"],
+  ["custom-twitter-light", comix("#fff", "#1da0f1", "0.1")],
+  ["custom-twitter-light", comix("#000", "#1da0f1", "0.1")],
+  ["custom-facebook", "#3b5996"],
+  ["custom-facebook-light", comix("#fff", "#3b5996", "0.1")],
+  ["custom-facebook-light", comix("#000", "#3b5996", "0.1")],
+  ["custom-linkedin", "#0077b5"],
+  ["custom-linkedin-light", comix("#fff", "#0077b5", "0.1")],
+  ["custom-linkedin-light", comix("#000", "#0077b5", "0.1")],
 
   // Alpha Colors variants
   ["black-alpha-5", "rgba(0,0,0,.05)"],
+  ["black-alpha-7", "rgba(0,0,0,.07)"],
+  ["black-alpha-10", "rgba(0,0,0,.1)"],
   ["black-alpha-15", "rgba(0,0,0,.15)"],
 ]
 
@@ -380,9 +446,40 @@ const color = {
   pseudo,
 }
 
+const cursor = {
+  name: "cursor",
+  rules: [
+    ["not-allowed"],
+  ],
+}
+
 const backgroundColor = {
   name: "background-color",
   rules: colors,
+  pseudo,
+}
+
+const backgroundImage = {
+  name: "background-image",
+  rules: [
+    ["background", "url('/img/background.svg')"],
+  ],
+  pseudo,
+}
+
+const backgroundPosition = {
+  name: "background-position",
+  rules: [
+    ["center"],
+  ],
+  pseudo,
+}
+
+const backgroundSize = {
+  name: "background-size",
+  rules: [
+    ["cover"],
+  ],
   pseudo,
 }
 
@@ -396,6 +493,7 @@ const fill = {
 const borderColor = {
   name: "border-color",
   rules: colors,
+  media,
 }
 
 const borderStyle = {
@@ -403,21 +501,31 @@ const borderStyle = {
   rules: [
     ["solid"],
   ],
+  media,
 }
 
 const borderWidth = {
   name: "border-width",
   rules: [
-    ["1"],
+    ["1px"],
+    ["2px"],
+    ["3px"],
   ],
+  media,
 }
 
 const borderRadius = {
   name: "border-radius",
   rules: [
     ["50perc", "50%"],
+    ["1px"],
+    ["4px"],
+    ["6px"],
+    ["8px"],
+    ["20px"],
     ["3", rem(3)], // 0.2rem
   ],
+  media,
 }
 
 const opacity = {
@@ -435,8 +543,13 @@ const boxShadow = {
     ["subtle-2", "0 3px 8px rgba(0,0,0,0.2)"],
     ["subtle-3", "0 3px 4px -1px rgba(0,0,0,0.1)"],
     ["subtle-4", "0 3px 8px -1px rgba(0,0,0,0.3)"],
+    ["subtle-5", "0 2px 10px rgba(0,0,0,0.2)"],
     ["strong", "0px 10px 15px rgba(0,0,0,0.30)"],
+    ["strong-2", "0px 8px 12px -3px rgba(0,0,0,0.3)"],
+    ["inset-subtle", "inset 0px 1px 3px rgba(0,0,0,0.1)"],
+    ["inset-subtle-2", "inset 0px 1px 3px rgba(0,0,0,0.12)"],
   ],
+  media,
   pseudo,
 }
 
@@ -461,6 +574,8 @@ const animationName = {
   name: "animation-name",
   rules: [
     ["dropdown-button-open"],
+    ["notification-slide-in"],
+    ["run"],
   ],
 }
 
@@ -468,14 +583,41 @@ const animationDuration = {
   name: "animation-duration",
   rules: [
     ["100ms"],
+    ["300ms"],
+    ["1600ms"],
+  ],
+}
+
+const animationDelay = {
+  name: "animation-delay",
+  rules: [
+    ["90ms"],
+    ["180ms"],
+    ["270ms"],
+  ],
+}
+
+const animationIterationCount = {
+  name: "animation-iteration-count",
+  rules: [
+    ["infinite"],
+  ],
+}
+
+const animationTimingFunction = {
+  name: "animation-timing-function",
+  rules: [
+    ["ease-out"],
   ],
 }
 
 const transition = {
   name: "transition",
   rules: [
+    ["color", "color .15s"],
     ["background", "background-color .15s"],
     ["background-shadow", "background-color .15s, box-shadow .15s"],
+    ["transform", "transform .15s"],
   ],
 }
 
@@ -507,6 +649,7 @@ export default [
   height,
   minWidth,
   maxWidth,
+  minHeight,
 
   padding,
   paddingTop,
@@ -530,11 +673,16 @@ export default [
   textAlign,
   textDecoration,
   textTransform,
+  whiteSpace,
 
   // Colors
 
   color,
+  cursor,
   backgroundColor,
+  backgroundImage,
+  backgroundPosition,
+  backgroundSize,
   fill,
 
   // Visual
@@ -553,6 +701,9 @@ export default [
 
   animationName,
   animationDuration,
+  animationDelay,
+  animationIterationCount,
+  animationTimingFunction,
 
   transition,
 

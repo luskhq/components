@@ -3,10 +3,13 @@ import {PropTypes} from "react"
 
 import c from "classnames"
 import s from "../stylesheet"
+
 import {pick, apply} from "../stylesheet/utils"
 
 const Text = ({children, center, hero, noMargin, ...otherProps}, {theme}) => (
-  <p {...otherProps} className={c(
+  <p
+    {...otherProps}
+    className={c(
       s.marginBottom(noMargin ? "0" : "15"),
       s.fontSize(hero ? "21" : "15"),
       s.textAlign(center && "center"),

@@ -5,8 +5,7 @@ const SvgElement = ({children, ...otherProps}) => (
   <svg
     {...otherProps}
     preserveAspectRatio="xMidYMid meet"
-    xmlns="http://www.w3.org/svg/2000"
-    >
+    xmlns="http://www.w3.org/svg/2000">
     {children}
   </svg>
 )

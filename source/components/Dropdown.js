@@ -67,17 +67,14 @@ class Dropdown extends React.Component {
           s.position("relative"),
           s.display("inline-block"),
         )}>
-
         {this.renderHandler()}
-
         {(open) &&
           <DropdownMenu
             alignMenu={alignMenu}
             children={children}
             handleFocus={this.handleFocus}
             handleBlur={this.handleBlur}
-            closeMenuOnEsc={this.closeMenuOnEsc}
-            />
+            closeMenuOnEsc={this.closeMenuOnEsc} />
         }
       </span>
     )
@@ -94,8 +91,7 @@ class Dropdown extends React.Component {
             icon="expand"
             onClick={this.handleClick}
             onFocus={this.handleFocus}
-            onBlur={this.handleBlur}
-            />
+            onBlur={this.handleBlur} />
         )
       case "icon":
         return (
@@ -105,8 +101,7 @@ class Dropdown extends React.Component {
             label="More"
             onClick={this.handleClick}
             onFocus={this.handleFocus}
-            onBlur={this.handleBlur}
-            />
+            onBlur={this.handleBlur} />
         )
       default:
         return (
@@ -116,8 +111,7 @@ class Dropdown extends React.Component {
             icon="expand"
             onClick={this.handleClick}
             onFocus={this.handleFocus}
-            onBlur={this.handleBlur}
-            />
+            onBlur={this.handleBlur} />
         )
       }
   }

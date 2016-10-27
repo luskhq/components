@@ -13,7 +13,7 @@ const ArchivedBanner = () => (
       <div className={c(
           s.paddingAll(["30", "75"]),
           s.fontSize("21"),
-          s.color("oyster-blue-grey-dark"),
+          s.color("oyster-blue-gray-dark"),
         )}>
         This position is archived
       </div>

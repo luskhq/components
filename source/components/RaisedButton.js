@@ -6,6 +6,7 @@ import {Pressable} from "./index"
 
 import c from "classnames"
 import s from "../stylesheet"
+
 import {pick, apply} from "../stylesheet/utils"
 
 class RaisedButton extends React.Component {
@@ -76,71 +77,51 @@ class RaisedButton extends React.Component {
               s.boxShadow("subtle-3", ":active"),
             ]
           }),
-      )}>
-        <RaisedButtonInner
-          iconPosition={iconPosition}
-          label={label}
-          theme={theme}
-          pending={pending}
-          labelPending={labelPending}
-          size={size}
-          icon={icon}
-          />
-      </Pressable>
-    )
-  }
-
-}
-
-class RaisedButtonInner extends React.Component {
-
-  render() {
-    const {iconPosition, label, theme, pending, labelPending, size, icon} = this.props
-
-    return (
-      <div className={c(
-          s.display("flex"),
-          s.alignItems("center"),
-          s.justifyContent("center"),
-          s.flexDirection((iconPosition === "left") && "row-reverse"),
-          pick(size, {
-            large: [
-              s.height("51"),
-              s.minWidth("135"),
-              s.paddingAll(["0", "24"]),
-            ],
-            condensed: [
-              s.height("36"),
-              s.paddingAll(["0", "12"]),
-            ],
-            fullwidth: [
-              s.height("54"),
-            ],
-            regular: [
-              s.height("45"),
-              s.minWidth("105"),
-              s.paddingAll(["0", "15"]),
-            ],
-          }),
         )}>
         <div className={c(
-          s.color((theme === "light") ? "oyster-blue-gray" : "white"),
-          s.fontWeight("600"),
-          s.textAlign("center"),
-        )}>
-          {(pending) ? labelPending : label}
-        </div>
-        {(icon) &&
-          <div className={c(
-            s.marginAll((iconPosition === "left") ? ["auto", "9", "auto", "auto"] : ["auto", "auto", "auto", "9"]),
+            s.display("flex"),
+            s.alignItems("center"),
+            s.justifyContent("center"),
+            s.flexDirection((iconPosition === "left") && "row-reverse"),
+            pick(size, {
+              large: [
+                s.height("51"),
+                s.minWidth("135"),
+                s.paddingAll(["0", "24"]),
+              ],
+              condensed: [
+                s.height("36"),
+                s.paddingAll(["0", "12"]),
+              ],
+              fullwidth: [
+                s.height("54"),
+              ],
+              regular: [
+                s.height("45"),
+                s.minWidth("105"),
+                s.paddingAll(["0", "15"]),
+              ],
+            }),
           )}>
-            {(theme === "light")
-              ? <Icon name={icon} />
-              : <Icon name={icon} theme="light" />
-            }
+          <div className={c(
+              s.color((theme === "light") ? "oyster-blue-gray" : "white"),
+              s.fontWeight("600"),
+              s.textAlign("center"),
+            )}>
+            {(pending) ? labelPending : label}
           </div>
-        }
-      </div>
+          {(icon) &&
+            <div className={c(
+                s.marginAll((iconPosition === "left") ? ["auto", "9", "auto", "auto"] : ["auto", "auto", "auto", "9"]),
+              )}>
+              {(theme === "light")
+                ? <Icon name={icon} />
+                : <Icon name={icon} theme="light" />
+              }
+            </div>
+          }
+        </div>
+      </Pressable>
     )
   }
 

@@ -27,7 +27,7 @@ class DropdownOption extends React.Component {
             s.textDecoration("none"),
             s.backgroundColor("oyster-background", ":hover"),
             s.backgroundColor("custom-iron", ":active"),
-          )}>
+        )}>
         <div className={c(
             s.display("flex"),
           )}>
@@ -44,14 +44,12 @@ class DropdownOption extends React.Component {
                 <SmallIcon name={icon} />
               </div>
             }
-
             <div className={c(
                 s.fontSize("13"),
                 s.color("oyster-blue-gray"),
               )}>
               {label}
             </div>
-
             {(hint) &&
               <div className={c(
                   s.marginLeft("6"),
@@ -62,11 +60,10 @@ class DropdownOption extends React.Component {
               </div>
             }
           </div>
-
           {showCheckbox &&
             <div className={c(
                 s.borderStyle("solid"),
-                s.borderWidth("1"),
+                s.borderWidth("1px"),
                 s.borderRadius("3"),
                 checked ? [
                   s.backgroundColor("oyster-green"),
@@ -79,7 +76,6 @@ class DropdownOption extends React.Component {
               <SmallIcon name={checked ? "checked" : "_empty"} theme="light"/>
             </div>
           }
-
         </div>
       </Pressable>
     )
