@@ -425,13 +425,13 @@ const colors = [
   ["custom-gull-gray-2-dark", comix("#000", "#95a8b8", "0.1")],
   ["custom-twitter", "#1da0f1"],
   ["custom-twitter-light", comix("#fff", "#1da0f1", "0.1")],
-  ["custom-twitter-light", comix("#000", "#1da0f1", "0.1")],
+  ["custom-twitter-dark", comix("#000", "#1da0f1", "0.1")],
   ["custom-facebook", "#3b5996"],
-  ["custom-facebook-light", comix("#fff", "#3b5996", "0.1")],
+  ["custom-facebook-dark", comix("#fff", "#3b5996", "0.1")],
   ["custom-facebook-light", comix("#000", "#3b5996", "0.1")],
   ["custom-linkedin", "#0077b5"],
   ["custom-linkedin-light", comix("#fff", "#0077b5", "0.1")],
-  ["custom-linkedin-light", comix("#000", "#0077b5", "0.1")],
+  ["custom-linkedin-dark", comix("#000", "#0077b5", "0.1")],
 
   // Alpha Colors variants
   ["black-alpha-5", "rgba(0,0,0,.05)"],
