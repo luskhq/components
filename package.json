@@ -1,7 +1,7 @@
 {
   "name": "@lusk/ui",
   "description": "A collection of components and stylesheets for Lusk apps",
-  "version": "1.0.0-beta",
+  "version": "1.0.0-beta.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/luskhq/components.git"
