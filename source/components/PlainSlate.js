@@ -1,8 +1,8 @@
 import React from "react"
 import {PropTypes} from "react"
 
-import {Viewarea} from "./index"
-import {Text} from "./index"
+import Viewarea from "./Viewarea"
+import Text from "./Text"
 
 const PlainSlate = ({children}) => (
   <Viewarea size="narrow">

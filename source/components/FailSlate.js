@@ -1,9 +1,9 @@
 import React from "react"
 import {PropTypes} from "react"
 
-import {Viewarea} from "./index"
-import {Title} from "./index"
-import {Text} from "./index"
+import Viewarea from "./Viewarea"
+import Title from "./Title"
+import Text from "./Text"
 
 const FailSlate = ({title, children}) => (
   <Viewarea size="narrow">

@@ -1,8 +1,8 @@
 import React from "react"
 import {PropTypes} from "react"
 
-import {Text} from "./index"
-import {Group} from "./index"
+import Text from "./Text"
+import Group from "./Group"
 
 import c from "classnames"
 import s from "../stylesheet"

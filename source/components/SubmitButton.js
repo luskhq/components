@@ -1,6 +1,6 @@
 import React from "react"
 
-import {RaisedButton} from "./index"
+import RaisedButton from "./RaisedButton"
 
 class SubmitButton extends React.Component {
 

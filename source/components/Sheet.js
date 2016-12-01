@@ -1,9 +1,9 @@
 import React from "react"
 import {PropTypes} from "react"
 
-import {Cushion} from "./index"
-import {Card} from "./index"
-import {Group} from "./index"
+import Cushion from "./Cushion"
+import Card from "./Card"
+import Group from "./Group"
 
 const Sheet = ({children}) => (
   <Group>

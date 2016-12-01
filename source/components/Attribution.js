@@ -1,7 +1,7 @@
 import React from "react"
 import {PropTypes} from "react"
 
-import {Time} from "./index"
+import Time from "./Time"
 
 import c from "classnames"
 import s from "../stylesheet"

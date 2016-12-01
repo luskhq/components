@@ -3,7 +3,7 @@ import {PropTypes} from "react"
 import ReactDOM from "react-dom"
 import {Link} from "react-router"
 
-import {ButtonElement} from "./index"
+import ButtonElement from "./ButtonElement"
 
 class Pressable extends React.Component {
 

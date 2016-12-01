@@ -1,7 +1,7 @@
 import React from "react"
 import {PropTypes} from "react"
 
-import {Row} from "./index"
+import Row from "./Row"
 
 import c from "classnames"
 import s from "../stylesheet"

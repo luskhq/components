@@ -1,7 +1,7 @@
 import React from "react"
 import {PropTypes} from "react"
 
-import {Spinner} from "./index"
+import Spinner from "./Spinner"
 
 import c from "classnames"
 import s from "../stylesheet"

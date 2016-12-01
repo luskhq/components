@@ -1,11 +1,11 @@
 import React from "react"
 import {PropTypes} from "react"
 
-import {Card} from "./index"
-import {Viewarea} from "./index"
-import {Cushion} from "./index"
-import {Group} from "./index"
-import {Logo} from "./index"
+import Card from "./Card"
+import Viewarea from "./Viewarea"
+import Cushion from "./Cushion"
+import Group from "./Group"
+import Logo from "./Logo"
 
 const NarrowLayout = ({children}) => (
   <Viewarea size="narrow">

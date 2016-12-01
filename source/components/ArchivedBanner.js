@@ -1,6 +1,6 @@
 import React from "react"
 
-import {MaxWidthConstraint} from "./index"
+import MaxWidthConstraint from "./MaxWidthConstraint"
 
 import c from "classnames"
 import s from "../stylesheet"
