@@ -4,6 +4,8 @@ import {PropTypes} from "react"
 import c from "classnames"
 import s from "../stylesheet"
 
+import {pick} from "../stylesheet/utils"
+
 const Toast = ({label, theme, k = Date.now()}) => (
   <div
     key={k}
@@ -24,17 +26,21 @@ const Toast = ({label, theme, k = Date.now()}) => (
       s.boxShadow("subtle-5", "@small"),
       s.animationName("notification-slide-in"),
       s.animationDuration("300ms"),
-      (theme === "warning") ? [
-        s.backgroundColor("oyster-yellow"),
-        s.borderAll(["1px", "solid", "custom-hockey-pockey"], "@small"),
-      ] : [
-        s.backgroundColor("dark-purple"),
-      ]
+      pick(theme, {
+        "regular": s.backgroundColor("dark-purple"),
+        "warning": [
+          s.backgroundColor("oyster-yellow"),
+          s.borderAll(["1px", "solid", "custom-hockey-pockey"], "@small"),
+        ],
+      })
     )}>
     <span className={c(
         s.fontSize("15"),
         s.lineHeight("tight"),
-        s.color((theme === "warning") ? "custom-yellow-metal" : "white"),
+        pick(theme, {
+          "regular": s.color("white"),
+          "warning": s.color("custom-yellow-metal"),
+        })
       )}>
       {label}
     </span>

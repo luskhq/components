@@ -6,7 +6,7 @@ import Pressable from "./Pressable"
 import c from "classnames"
 import s from "../stylesheet"
 
-import {apply} from "../stylesheet/utils"
+import {pick} from "../stylesheet/utils"
 
 const TextLink = ({children, className, ...props}, {theme}) => (
   <Pressable
@@ -15,26 +15,20 @@ const TextLink = ({children, className, ...props}, {theme}) => (
       s.textDecoration("underline"),
       s.color("inherit"),
       s.transition("transform"),
-      apply(null, () => {
-        if (theme === "warning") {
-          return [
-            s.color("custom-yellow-metal-darker", ":hover"),
-            s.color("custom-yellow-metal-dark", ":active"),
-          ]
-        }
-
-        if (theme === "error") {
-          return [
-            s.color("custom-matrix-darker", ":hover"),
-            s.color("custom-matrix-dark", ":active"),
-          ]
-        }
-
-        return [
+      pick(theme, {
+        "regular": [
           s.color("oyster-blue", ":hover"),
           s.color("oyster-blue-dark-2", ":active"),
-        ]
-      }),
+        ],
+        "warning": [
+          s.color("custom-yellow-metal-darker", ":hover"),
+          s.color("custom-yellow-metal-dark", ":active"),
+        ],
+        "error": [
+          s.color("custom-matrix-darker", ":hover"),
+          s.color("custom-matrix-dark", ":active"),
+        ],
+      })
     )}>
     {children}
   </Pressable>

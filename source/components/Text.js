@@ -4,7 +4,7 @@ import {PropTypes} from "react"
 import c from "classnames"
 import s from "../stylesheet"
 
-import {pick, apply} from "../stylesheet/utils"
+import {pick} from "../stylesheet/utils"
 
 const Text = ({children, center, hero, noMargin, ...otherProps}, {theme}) => (
   <p
@@ -14,16 +14,10 @@ const Text = ({children, center, hero, noMargin, ...otherProps}, {theme}) => (
       s.fontSize(hero ? "21" : "15"),
       s.textAlign(center && "center"),
       s.lineHeight("comfy"),
-      apply(theme, (theme) => {
-        const color = pick(theme, {
-          regular: "black",
-          warning: "custom-yellow-metal",
-          error: "custom-matrix",
-        })
-
-        return [
-          s.color(`${color}`),
-        ]
+      pick(theme, {
+        "regular": s.color("oyster-blue-gray"),
+        "warning": s.color("custom-yellow-metal"),
+        "error": s.color("custom-matrix"),
       }),
     )}>
     {children}

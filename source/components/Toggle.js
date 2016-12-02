@@ -6,7 +6,7 @@ import Icon from "./Icon"
 
 import c from "classnames"
 import s from "../stylesheet"
-import {apply} from "../stylesheet/utils"
+import {pick} from "../stylesheet/utils"
 
 class Toggle extends React.Component {
 
@@ -33,35 +33,29 @@ class Toggle extends React.Component {
           s.textDecoration("none"),
           s.borderRadius("1px"),
           s.transition("background-shadow"),
-          apply(null, () => {
-            if (active) {
-              if (theme === "light") {
-                return [
-                  s.backgroundColor("black-alpha-15"),
-                  s.boxShadow("inset-subtle-2"),
-                ]
-              } else {
-                return [
+          active
+            ? pick(theme, {
+                "regular": [
                   s.backgroundColor("black-alpha-7"),
                   s.boxShadow("inset-subtle"),
-                ]
-              }
-            }
-
-            if (theme === "light") {
-              return [
-                s.backgroundColor("black-alpha-10", ":hover"),
-                s.backgroundColor("black-alpha-15", ":active"),
-                s.boxShadow("inset-subtle-2", ":active"),
-              ]
-            } else {
-              return [
-                s.backgroundColor("black-alpha-5", ":hover"),
-                s.backgroundColor("black-alpha-7", ":active"),
-                s.boxShadow("inset-subtle", ":active"),
-              ]
-            }
-          }),
+                ],
+                "light": [
+                  s.backgroundColor("black-alpha-15"),
+                  s.boxShadow("inset-subtle-2"),
+                ],
+              })
+            : pick(theme, {
+                "regular": [
+                  s.backgroundColor("black-alpha-5", ":hover"),
+                  s.backgroundColor("black-alpha-7", ":active"),
+                  s.boxShadow("inset-subtle", ":active"),
+                ],
+                "light": [
+                  s.backgroundColor("black-alpha-10", ":hover"),
+                  s.backgroundColor("black-alpha-15", ":active"),
+                  s.boxShadow("inset-subtle-2", ":active"),
+                ],
+              })
         )}>
         <div className={c(
             s.display("flex"),
@@ -80,7 +74,10 @@ class Toggle extends React.Component {
               s.fontWeight("600"),
               s.lineHeight("22"),
               s.textTransform("uppercase"),
-              s.color((theme === "light") ? "white" : "custom-hoki")
+              pick(theme, {
+                "regular": s.color("white"),
+                "light": s.color("custom-hoki"),
+              }),
             )}>
             {label}
           </div>
