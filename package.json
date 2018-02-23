@@ -29,7 +29,7 @@
     "lint": "eslint source"
   },
   "peerDependencies": {
-    "react": "^15.3.2"
+    "react": "^15.3.2 || ^16.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.16.0",
@@ -40,7 +40,10 @@
     "babel-preset-react": "^6.16.0",
     "eslint": "^3.7.1",
     "eslint-config-lusk": "^0.1.0",
-    "eslint-plugin-react": "^6.3.0"
+    "eslint-plugin-react": "^6.3.0",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
   },
   "dependencies": {
     "color": "^0.11.3",

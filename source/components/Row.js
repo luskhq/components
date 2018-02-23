@@ -1,5 +1,5 @@
 import React from "react"
-import {PropTypes} from "react"
+import PropTypes from "prop-types"
 import {Children} from "react"
 
 import c from "classnames"
