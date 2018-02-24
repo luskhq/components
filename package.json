@@ -25,22 +25,19 @@
     "clean": "rimraf dist",
     "build": "babel ./source --out-dir . --ignore *.test.js",
     "dev": "babel --watch ./source --out-dir . --ignore *.test.js",
-    "prepublish": "npm run build",
-    "lint": "eslint source"
+    "prepublishOnly": "npm run build",
+    "lint": "eslint source",
+    "format": "prettier-eslint './source/**/*.js' --write"
   },
   "peerDependencies": {
     "react": "^15.3.2 || ^16.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.16.0",
-    "babel-core": "^6.17.0",
-    "babel-eslint": "^7.0.0",
-    "babel-plugin-transform-object-rest-spread": "^6.16.0",
-    "babel-preset-latest": "^6.16.0",
-    "babel-preset-react": "^6.16.0",
-    "eslint": "^3.7.1",
-    "eslint-config-lusk": "^0.1.0",
-    "eslint-plugin-react": "^6.3.0",
+    "babel-preset-lusk": "0.0.3",
+    "eslint": "^4.18.1",
+    "eslint-config-lusk": "^3.0.0",
+    "prettier-eslint-cli": "^4.7.1",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"

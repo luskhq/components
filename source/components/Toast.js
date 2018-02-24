@@ -1,12 +1,12 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from "react";
+import PropTypes from "prop-types";
 
-import c from "classnames"
-import s from "../stylesheet"
+import c from "classnames";
+import s from "../stylesheet";
 
-import {pick} from "../stylesheet/utils"
+import { pick } from "../stylesheet/utils";
 
-const Toast = ({label, theme, k = Date.now()}) => (
+const Toast = ({ label, theme, k = Date.now() }) => (
   <div
     key={k}
     className={c(
@@ -27,32 +27,31 @@ const Toast = ({label, theme, k = Date.now()}) => (
       s.animationName("notification-slide-in"),
       s.animationDuration("300ms"),
       pick(theme, {
-        "regular": s.backgroundColor("dark-purple"),
-        "warning": [
+        regular: s.backgroundColor("dark-purple"),
+        warning: [
           s.backgroundColor("oyster-yellow"),
           s.borderAll(["1px", "solid", "custom-hockey-pockey"], "@small"),
         ],
-      })
+      }),
     )}>
-    <span className={c(
+    <span
+      className={c(
         s.fontSize("15"),
         s.lineHeight("tight"),
         pick(theme, {
-          "regular": s.color("white"),
-          "warning": s.color("custom-yellow-metal"),
-        })
+          regular: s.color("white"),
+          warning: s.color("custom-yellow-metal"),
+        }),
       )}>
       {label}
     </span>
   </div>
-)
+);
 
 Toast.propTypes = {
-  theme: PropTypes.oneOf([
-    "warning",
-  ]),
+  theme: PropTypes.oneOf(["warning"]),
   label: PropTypes.string.isRequired,
   k: PropTypes.number,
-}
+};
 
-export default Toast
+export default Toast;

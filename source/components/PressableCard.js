@@ -1,12 +1,12 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from "react";
+import PropTypes from "prop-types";
 
-import Pressable from "./Pressable"
+import Pressable from "./Pressable";
 
-import c from "classnames"
-import s from "../stylesheet"
+import c from "classnames";
+import s from "../stylesheet";
 
-const PressableCard = ({children, ...otherProps}) => (
+const PressableCard = ({ children, ...otherProps }) => (
   <Pressable
     {...otherProps}
     className={c(
@@ -21,11 +21,11 @@ const PressableCard = ({children, ...otherProps}) => (
     )}>
     {children}
   </Pressable>
-)
+);
 
 PressableCard.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
-}
+};
 
-export default PressableCard
+export default PressableCard;

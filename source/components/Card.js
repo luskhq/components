@@ -1,21 +1,22 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from "react";
+import PropTypes from "prop-types";
 
-import c from "classnames"
-import s from "../stylesheet"
+import c from "classnames";
+import s from "../stylesheet";
 
-const Card = ({children, raised}) => (
-  <div className={c(
+const Card = ({ children, raised }) => (
+  <div
+    className={c(
       s.boxShadow(raised ? "strong" : "subtle"),
       s.backgroundColor("white"),
     )}>
     {children}
   </div>
-)
+);
 
 Card.propTypes = {
   children: PropTypes.node.isRequired,
   raised: PropTypes.bool,
-}
+};
 
-export default Card
+export default Card;

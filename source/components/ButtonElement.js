@@ -1,39 +1,30 @@
-import React from "react"
-import PropTypes from "prop-types"
-import ReactDOM from "react-dom"
+import React from "react";
+import PropTypes from "prop-types";
+import ReactDOM from "react-dom";
 
 class ButtonElement extends React.Component {
-
   focus() {
-    ReactDOM.findDOMNode(this.button).focus()
+    ReactDOM.findDOMNode(this.button).focus();
   }
 
   render() {
-    const {type, children, ...otherProps} = this.props
+    const { type, children, ...otherProps } = this.props;
 
     return (
-      <button
-        {...otherProps}
-        ref={(ref) => this.button = ref}
-        type={type}>
+      <button {...otherProps} ref={ref => this.button = ref} type={type}>
         {children}
       </button>
-    )
+    );
   }
-
 }
 
 ButtonElement.propTypes = {
-  type: PropTypes.oneOf([
-    "button",
-    "submit",
-    "reset",
-  ]).isRequired,
+  type: PropTypes.oneOf(["button", "submit", "reset"]).isRequired,
   children: PropTypes.node.isRequired,
-}
+};
 
 ButtonElement.defaultProps = {
   type: "button",
-}
+};
 
-export default ButtonElement
+export default ButtonElement;

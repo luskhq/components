@@ -1,11 +1,13 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from "react";
+import PropTypes from "prop-types";
 
-import c from "classnames"
-import s from "../stylesheet"
+import c from "classnames";
+import s from "../stylesheet";
 
-const Hint = ({children, center, ...otherProps}) => (
-  <p {...otherProps} className={c(
+const Hint = ({ children, center, ...otherProps }) => (
+  <p
+    {...otherProps}
+    className={c(
       s.marginBottom("15"),
       s.fontSize("13"),
       s.lineHeight("comfy"),
@@ -14,11 +16,11 @@ const Hint = ({children, center, ...otherProps}) => (
     )}>
     {children}
   </p>
-)
+);
 
 Hint.propTypes = {
   children: PropTypes.node.isRequired,
   center: PropTypes.bool,
-}
+};
 
-export default Hint
+export default Hint;

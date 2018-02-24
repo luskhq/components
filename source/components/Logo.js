@@ -1,9 +1,10 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from "react";
+import PropTypes from "prop-types";
 
-import SvgElement from "./SvgElement"
+import SvgElement from "./SvgElement";
 
-const Logo = ({theme}) => {
+// prettier-ignore
+const Logo = ({ theme }) => {
   if (theme === "large") {
     return (
       <SvgElement
@@ -46,6 +47,6 @@ const Logo = ({theme}) => {
 
 Logo.propTypes = {
   theme: PropTypes.oneOf(["large"]),
-}
+};
 
-export default Logo
+export default Logo;

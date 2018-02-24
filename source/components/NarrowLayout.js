@@ -1,13 +1,13 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from "react";
+import PropTypes from "prop-types";
 
-import Card from "./Card"
-import Viewarea from "./Viewarea"
-import Cushion from "./Cushion"
-import Group from "./Group"
-import Logo from "./Logo"
+import Card from "./Card";
+import Viewarea from "./Viewarea";
+import Cushion from "./Cushion";
+import Group from "./Group";
+import Logo from "./Logo";
 
-const NarrowLayout = ({children}) => (
+const NarrowLayout = ({ children }) => (
   <Viewarea size="narrow">
     <Card theme="raised">
       <Cushion theme="wide">
@@ -18,10 +18,10 @@ const NarrowLayout = ({children}) => (
       </Cushion>
     </Card>
   </Viewarea>
-)
+);
 
 NarrowLayout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default NarrowLayout
+export default NarrowLayout;

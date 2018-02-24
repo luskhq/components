@@ -1,24 +1,19 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from "react";
+import PropTypes from "prop-types";
 
-import Row from "./Row"
+import Row from "./Row";
 
-import c from "classnames"
-import s from "../stylesheet"
+import c from "classnames";
+import s from "../stylesheet";
 
-const Toolbar = ({children}) => (
-  <div className={c(
-      s.marginBottom("15"),
-      s.marginBottom("36", "@medium"),
-    )}>
-    <Row distribute>
-      {children}
-    </Row>
+const Toolbar = ({ children }) => (
+  <div className={c(s.marginBottom("15"), s.marginBottom("36", "@medium"))}>
+    <Row distribute>{children}</Row>
   </div>
-)
+);
 
 Toolbar.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default Toolbar
+export default Toolbar;

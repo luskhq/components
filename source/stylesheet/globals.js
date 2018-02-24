@@ -1,4 +1,4 @@
-import {oneLineTrim} from "common-tags"
+import { oneLineTrim } from "common-tags";
 
 export default oneLineTrim`
   @keyframes dropdown-button-open {
@@ -36,4 +36,4 @@ export default oneLineTrim`
       transform: rotate(360deg);
     }
   }
-`
+`;

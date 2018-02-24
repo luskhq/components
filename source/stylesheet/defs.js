@@ -1,12 +1,14 @@
-import co from "color"
+import co from "color";
 
 // Utils
 
-const makeRem = (base) => (px) => `${px / base}rem`
-const rem = makeRem(15)
+const makeRem = base => px => `${px / base}rem`;
+const rem = makeRem(15);
 // const perc = (fraction) => `${fraction * 100}%`
-const comix = (c1, c2, perc) => co(c1).mix(co(c2), perc).hexString()
-
+const comix = (c1, c2, perc) =>
+  co(c1)
+    .mix(co(c2), perc)
+    .hexString();
 
 // ============= MEDIA =============
 
@@ -16,16 +18,11 @@ const media = [
   ["@medium", "(min-width: 60em)"],
   ["@large", "(min-width: 75em)"],
   ["@xlarge", "(min-width: 130em)"],
-]
-
+];
 
 // ============= PSEUDO ============
 
-const pseudo = [
-  ":hover",
-  ":active",
-]
-
+const pseudo = [":hover", ":active"];
 
 // ============= RULES =============
 
@@ -40,52 +37,43 @@ const location = [
   ["35perc", "35%"],
   ["100perc", "100%"],
   ["-5px"],
-  ["45", rem(45)],      // 3
-]
+  ["45", rem(45)], // 3
+];
 
 const position = {
   name: "position",
-  rules: [
-    ["static"],
-    ["relative"],
-    ["absolute"],
-    ["fixed"],
-  ],
+  rules: [["static"], ["relative"], ["absolute"], ["fixed"]],
   media,
-}
+};
 
 const top = {
   name: "top",
   rules: location,
   media,
-}
+};
 
 const right = {
   name: "right",
   rules: location,
   media,
-}
+};
 
 const bottom = {
   name: "bottom",
   rules: location,
   media,
-}
+};
 
 const left = {
   name: "left",
   rules: location,
   media,
-}
+};
 
 const zIndex = {
   name: "z-index",
-  rules: [
-    ["1"],
-    ["5"],
-    ["10"],
-  ],
-}
+  rules: [["1"], ["5"], ["10"]],
+};
 
 const display = {
   name: "display",
@@ -98,49 +86,37 @@ const display = {
     ["flex"],
   ],
   media,
-}
+};
 
 const flexGrow = {
   name: "flex-grow",
-  rules: [
-    ["0"],
-    ["1"],
-  ],
+  rules: [["0"], ["1"]],
   media,
-}
+};
 
 const flexShrink = {
   name: "flex-shrink",
-  rules: [
-    ["0"],
-  ],
+  rules: [["0"]],
   media,
-}
+};
 
 const flexDirection = {
   name: "flex-direction",
-  rules: [
-    ["row-reverse"],
-  ],
+  rules: [["row-reverse"]],
   media,
-}
+};
 
 const alignItems = {
   name: "align-items",
-  rules: [
-    ["center"],
-  ],
+  rules: [["center"]],
   media,
-}
+};
 
 const justifyContent = {
   name: "justify-content",
-  rules: [
-    ["center"],
-    ["space-between"],
-  ],
+  rules: [["center"], ["space-between"]],
   media,
-}
+};
 
 // Spacing (WithMargin and Padding)
 
@@ -155,134 +131,129 @@ const spacing = [
   ["30px"],
   ["50px"],
   ["100px"],
-  ["3", rem(3)],        // 0.2
-  ["6", rem(6)],        // 0.4
-  ["9", rem(9)],        // 0.6
-  ["12", rem(12)],      // 0.8
-  ["13", rem(13)],      // 0.9 cca
-  ["15", rem(15)],      // 1
-  ["16", rem(16)],      // 1.1 cca
-  ["18", rem(18)],      // 1.2
-  ["21", rem(21)],      // 1.4
-  ["24", rem(24)],      // 1.6
-  ["30", rem(30)],      // 2
-  ["36", rem(36)],      // 2.4
-  ["42", rem(42)],      // 2.8
-  ["45", rem(45)],      // 3
-  ["48", rem(48)],      // 3.2
-  ["51", rem(51)],      // 3.4
-  ["54", rem(54)],      // 3.6
-  ["60", rem(60)],      // 4
-  ["66", rem(66)],      // 4.4
-  ["75", rem(75)],      // 5
-  ["105", rem(105)],    // 7
-  ["135", rem(135)],    // 9
-  ["240", rem(240)],    // 16
-  ["300", rem(300)],    // 20
-  ["780", rem(780)],    // 52
-  ["1350", rem(1350)],  // 90
-]
+  ["3", rem(3)], // 0.2
+  ["6", rem(6)], // 0.4
+  ["9", rem(9)], // 0.6
+  ["12", rem(12)], // 0.8
+  ["13", rem(13)], // 0.9 cca
+  ["15", rem(15)], // 1
+  ["16", rem(16)], // 1.1 cca
+  ["18", rem(18)], // 1.2
+  ["21", rem(21)], // 1.4
+  ["24", rem(24)], // 1.6
+  ["30", rem(30)], // 2
+  ["36", rem(36)], // 2.4
+  ["42", rem(42)], // 2.8
+  ["45", rem(45)], // 3
+  ["48", rem(48)], // 3.2
+  ["51", rem(51)], // 3.4
+  ["54", rem(54)], // 3.6
+  ["60", rem(60)], // 4
+  ["66", rem(66)], // 4.4
+  ["75", rem(75)], // 5
+  ["105", rem(105)], // 7
+  ["135", rem(135)], // 9
+  ["240", rem(240)], // 16
+  ["300", rem(300)], // 20
+  ["780", rem(780)], // 52
+  ["1350", rem(1350)], // 90
+];
 
 const width = {
   name: "width",
   rules: spacing,
   media,
-}
+};
 
 const height = {
   name: "height",
   rules: spacing,
   media,
-}
+};
 
 const minWidth = {
   name: "min-width",
   rules: spacing,
   media,
-}
+};
 
 const maxWidth = {
   name: "max-width",
   rules: spacing,
   media,
-}
+};
 
 const minHeight = {
   name: "min-height",
   rules: spacing,
   media,
-}
+};
 
 const padding = {
   name: "padding",
   rules: spacing,
   media,
-}
+};
 
 const paddingTop = {
   name: "padding-top",
   rules: spacing,
   media,
-}
+};
 
 const paddingRight = {
   name: "padding-right",
   rules: spacing,
   media,
-}
+};
 
 const paddingBottom = {
   name: "padding-bottom",
   rules: spacing,
   media,
-}
+};
 
 const paddingLeft = {
   name: "padding-left",
   rules: spacing,
   media,
-}
+};
 
 const margin = {
   name: "margin",
   rules: spacing,
   media,
-}
+};
 
 const marginTop = {
   name: "margin-top",
   rules: spacing,
   media,
-}
+};
 
 const marginRight = {
   name: "margin-right",
   rules: spacing,
   media,
-}
+};
 
 const marginBottom = {
   name: "margin-bottom",
   rules: spacing,
   media,
-}
+};
 
 const marginLeft = {
   name: "margin-left",
   rules: spacing,
   media,
-}
+};
 
 const overflow = {
   name: "overflow",
-  rules: [
-    ["visible"],
-    ["auto"],
-    ["scroll"],
-    ["hidden"],
-  ],
+  rules: [["visible"], ["auto"], ["scroll"], ["hidden"]],
   media,
-}
+};
 
 // Typography
 
@@ -290,16 +261,13 @@ const fontSize = {
   name: "font-size",
   rules: spacing,
   media,
-}
+};
 
 const fontWeight = {
   name: "font-weight",
-  rules: [
-    ["400"],
-    ["600"],
-  ],
+  rules: [["400"], ["600"]],
   media,
-}
+};
 
 const lineHeight = {
   name: "line-height",
@@ -308,43 +276,31 @@ const lineHeight = {
     ["tight-2", "1.2"],
     ["comfy", "1.4"],
     ["comfy-2", "1.5"],
-    ["22", rem(22)],      // 1.5 cca
+    ["22", rem(22)], // 1.5 cca
   ],
   media,
-}
+};
 
 const textAlign = {
   name: "text-align",
-  rules:  [
-    ["left"],
-    ["center"],
-    ["right"],
-  ],
+  rules: [["left"], ["center"], ["right"]],
   media,
-}
+};
 
 const textDecoration = {
   name: "text-decoration",
-  rules:  [
-    ["none"],
-    ["underline"],
-  ],
-}
+  rules: [["none"], ["underline"]],
+};
 
 const textTransform = {
   name: "text-transform",
-  rules:  [
-    ["lowercase"],
-    ["uppercase"],
-  ],
-}
+  rules: [["lowercase"], ["uppercase"]],
+};
 
 const whiteSpace = {
   name: "white-space",
-  rules:  [
-    ["nowrap"],
-  ],
-}
+  rules: [["nowrap"]],
+};
 
 // Colors
 
@@ -438,55 +394,47 @@ const colors = [
   ["black-alpha-7", "rgba(0,0,0,.07)"],
   ["black-alpha-10", "rgba(0,0,0,.1)"],
   ["black-alpha-15", "rgba(0,0,0,.15)"],
-]
+];
 
 const color = {
   name: "color",
   rules: colors,
   pseudo,
-}
+};
 
 const cursor = {
   name: "cursor",
-  rules: [
-    ["not-allowed"],
-  ],
-}
+  rules: [["not-allowed"]],
+};
 
 const backgroundColor = {
   name: "background-color",
   rules: colors,
   pseudo,
-}
+};
 
 const backgroundImage = {
   name: "background-image",
-  rules: [
-    ["background", "url('/img/background.svg')"],
-  ],
+  rules: [["background", "url('/img/background.svg')"]],
   pseudo,
-}
+};
 
 const backgroundPosition = {
   name: "background-position",
-  rules: [
-    ["center"],
-  ],
+  rules: [["center"]],
   pseudo,
-}
+};
 
 const backgroundSize = {
   name: "background-size",
-  rules: [
-    ["cover"],
-  ],
+  rules: [["cover"]],
   pseudo,
-}
+};
 
 const fill = {
   name: "fill",
   rules: colors,
-}
+};
 
 // Visual
 
@@ -494,25 +442,19 @@ const borderColor = {
   name: "border-color",
   rules: colors,
   media,
-}
+};
 
 const borderStyle = {
   name: "border-style",
-  rules: [
-    ["solid"],
-  ],
+  rules: [["solid"]],
   media,
-}
+};
 
 const borderWidth = {
   name: "border-width",
-  rules: [
-    ["1px"],
-    ["2px"],
-    ["3px"],
-  ],
+  rules: [["1px"], ["2px"], ["3px"]],
   media,
-}
+};
 
 const borderRadius = {
   name: "border-radius",
@@ -526,14 +468,12 @@ const borderRadius = {
     ["3", rem(3)], // 0.2rem
   ],
   media,
-}
+};
 
 const opacity = {
   name: "opacity",
-  rules: [
-    ["50perc", ".5"],
-  ],
-}
+  rules: [["50perc", ".5"]],
+};
 
 const boxShadow = {
   name: "box-shadow",
@@ -551,7 +491,7 @@ const boxShadow = {
   ],
   media,
   pseudo,
-}
+};
 
 // Misc
 
@@ -560,56 +500,37 @@ const transform = {
   rules: [
     ["translate-y-3", `translateY(${rem(3)})`], // 0.2rem
   ],
-}
+};
 
 const transformOrigin = {
   name: "transform-origin",
-  rules: [
-    ["top-left", "top left"],
-    ["top-right", "top right"],
-  ],
-}
+  rules: [["top-left", "top left"], ["top-right", "top right"]],
+};
 
 const animationName = {
   name: "animation-name",
-  rules: [
-    ["dropdown-button-open"],
-    ["notification-slide-in"],
-    ["run"],
-  ],
-}
+  rules: [["dropdown-button-open"], ["notification-slide-in"], ["run"]],
+};
 
 const animationDuration = {
   name: "animation-duration",
-  rules: [
-    ["100ms"],
-    ["300ms"],
-    ["1600ms"],
-  ],
-}
+  rules: [["100ms"], ["300ms"], ["1600ms"]],
+};
 
 const animationDelay = {
   name: "animation-delay",
-  rules: [
-    ["90ms"],
-    ["180ms"],
-    ["270ms"],
-  ],
-}
+  rules: [["90ms"], ["180ms"], ["270ms"]],
+};
 
 const animationIterationCount = {
   name: "animation-iteration-count",
-  rules: [
-    ["infinite"],
-  ],
-}
+  rules: [["infinite"]],
+};
 
 const animationTimingFunction = {
   name: "animation-timing-function",
-  rules: [
-    ["ease-out"],
-  ],
-}
+  rules: [["ease-out"]],
+};
 
 const transition = {
   name: "transition",
@@ -619,13 +540,11 @@ const transition = {
     ["background-shadow", "background-color .15s, box-shadow .15s"],
     ["transform", "transform .15s"],
   ],
-}
-
+};
 
 // ========== DEFINITIONS ==========
 
 export default [
-
   // Positioning
 
   position,
@@ -706,5 +625,4 @@ export default [
   animationTimingFunction,
 
   transition,
-
-]
+];

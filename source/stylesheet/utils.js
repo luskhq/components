@@ -28,7 +28,7 @@
  *
  */
 
-export const pick = (prop, map) => map[prop] || map.regular
+export const pick = (prop, map) => map[prop] || map.regular;
 
 /**
  * An alternative to IIFE (Immediately Invoked Function Expressions)
@@ -47,4 +47,4 @@ export const pick = (prop, map) => map[prop] || map.regular
  *
  */
 
-export const apply = (prop, func) => func(prop)
+export const apply = (prop, func) => func(prop);

@@ -1,14 +1,13 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from "react";
+import PropTypes from "prop-types";
 
 class PropagationStopper extends React.Component {
-
   stopPropagation(event) {
-    event.stopPropagation()
+    event.stopPropagation();
   }
 
   render() {
-    const {children, ...passingProps} = this.props
+    const { children, ...passingProps } = this.props;
 
     return (
       <div
@@ -19,12 +18,12 @@ class PropagationStopper extends React.Component {
         onKeyPress={this.stopPropagation}>
         {children}
       </div>
-    )
+    );
   }
 }
 
 PropagationStopper.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default PropagationStopper
+export default PropagationStopper;

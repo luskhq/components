@@ -1,32 +1,31 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from "react";
+import PropTypes from "prop-types";
 
-import Pressable from "./Pressable"
+import Pressable from "./Pressable";
 
-import c from "classnames"
-import s from "../stylesheet"
+import c from "classnames";
+import s from "../stylesheet";
 
-import {pick} from "../stylesheet/utils"
+import { pick } from "../stylesheet/utils";
 
 class TextButton extends React.Component {
-
   componentDidMount() {
     if (this.props.autofocus) {
-      this.focus()
+      this.focus();
     }
   }
 
   focus() {
-    this.button.focus()
+    this.button.focus();
   }
 
   render() {
-    const {disabled, label, theme, ...passingProps} = this.props
+    const { disabled, label, theme, ...passingProps } = this.props;
 
     return (
       <Pressable
         {...passingProps}
-        ref={(ref) => this.button = ref}
+        ref={ref => this.button = ref}
         aria-label={label}
         disabled={disabled}
         className={c(
@@ -36,12 +35,12 @@ class TextButton extends React.Component {
           s.textDecoration("none"),
           s.textTransform("uppercase"),
           pick(theme, {
-            "regular": [
+            regular: [
               s.color("oyster-blue"),
               s.color("oyster-blue-light", ":hover"),
               s.color("oyster-blue-dark", ":active"),
             ],
-            "subtle": [
+            subtle: [
               s.color("custom-gull-gray"),
               s.color("custom-gull-gray-light", ":hover"),
               s.color("custom-gull-gray-dark", ":active"),
@@ -53,9 +52,8 @@ class TextButton extends React.Component {
         )}>
         {label}
       </Pressable>
-    )
+    );
   }
-
 }
 
 TextButton.propTypes = {
@@ -64,6 +62,6 @@ TextButton.propTypes = {
   disabled: PropTypes.bool,
   pending: PropTypes.bool,
   theme: PropTypes.oneOf(["subtle"]),
-}
+};
 
-export default TextButton
+export default TextButton;

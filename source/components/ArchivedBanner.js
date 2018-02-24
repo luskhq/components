@@ -1,16 +1,15 @@
-import React from "react"
+import React from "react";
 
-import MaxWidthConstraint from "./MaxWidthConstraint"
+import MaxWidthConstraint from "./MaxWidthConstraint";
 
-import c from "classnames"
-import s from "../stylesheet"
+import c from "classnames";
+import s from "../stylesheet";
 
 const ArchivedBanner = () => (
-  <div className={c(
-      s.backgroundColor("custom-mischka"),
-    )}>
+  <div className={c(s.backgroundColor("custom-mischka"))}>
     <MaxWidthConstraint>
-      <div className={c(
+      <div
+        className={c(
           s.paddingAll(["30", "75"]),
           s.fontSize("21"),
           s.color("oyster-blue-gray-dark"),
@@ -19,6 +18,6 @@ const ArchivedBanner = () => (
       </div>
     </MaxWidthConstraint>
   </div>
-)
+);
 
-export default ArchivedBanner
+export default ArchivedBanner;
